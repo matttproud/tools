@@ -175,13 +175,13 @@ func (state *golistState) processGolistOverlay(response *responseDeduper) (modif
 						pkg.GoFiles = append(pkg.GoFiles, testVariantOf.GoFiles...)
 						pkg.CompiledGoFiles = append(pkg.CompiledGoFiles, testVariantOf.CompiledGoFiles...)
 						// Add the package under test and its imports to the test variant.
-						pkg.forTest = testVariantOf.PkgPath
+						pkg.ForTest = testVariantOf.PkgPath
 						for k, v := range testVariantOf.Imports {
 							pkg.Imports[k] = &Package{ID: v.ID}
 						}
 					}
 					if isXTest {
-						pkg.forTest = forTest
+						pkg.ForTest = forTest
 					}
 				}
 			}

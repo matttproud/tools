@@ -336,8 +336,8 @@ type Package struct {
 	// TypesSizes provides the effective size function for types in TypesInfo.
 	TypesSizes types.Sizes
 
-	// forTest is the package under test, if any.
-	forTest string
+	// ForTest is the package under test, if any.
+	ForTest string
 
 	// depsErrors is the DepsErrors field from the go list response, if any.
 	depsErrors []*packagesinternal.PackageError
@@ -367,7 +367,7 @@ type ModuleError struct {
 
 func init() {
 	packagesinternal.GetForTest = func(p interface{}) string {
-		return p.(*Package).forTest
+		return p.(*Package).ForTest
 	}
 	packagesinternal.GetDepsErrors = func(p interface{}) []*packagesinternal.PackageError {
 		return p.(*Package).depsErrors

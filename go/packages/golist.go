@@ -566,7 +566,7 @@ func (state *golistState) createDriverResponse(words ...string) (*driverResponse
 			CompiledGoFiles: absJoin(p.Dir, p.CompiledGoFiles),
 			OtherFiles:      absJoin(p.Dir, otherFiles(p)...),
 			IgnoredFiles:    absJoin(p.Dir, p.IgnoredGoFiles, p.IgnoredOtherFiles),
-			forTest:         p.ForTest,
+			ForTest:         p.ForTest,
 			depsErrors:      p.DepsErrors,
 			Module:          p.Module,
 		}
